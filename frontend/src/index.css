@@ -1,0 +1,70 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------- Neumorphic design tokens ---------- */
+:root{
+  --base:#e0e0e0;
+  --lighter:#ffffff;
+  --dark:#c8c8c8;
+  --darker:#bebebe;
+  --text-primary:#4a4a4a;
+  --text-secondary:#6a6a6a;
+  --text-muted:#8a8a8a;
+
+  --status-draft-bg:#d4d4d4; --status-draft-text:#6a6a6a;
+  --status-sent-bg:#c8d4e8;  --status-sent-text:#4a6ba8;
+  --status-approved-bg:#c8d4e8; --status-approved-text:#4a6ba8;
+  --status-paid-bg:#c8e8d4;  --status-paid-text:#4a8a6b;
+  --status-error-bg:#e8c8c8; --status-error-text:#a84a4a;
+}
+
+/* Base surface */
+html,body,#root{height:100%;}
+body{
+  background:var(--base);
+  color:var(--text-primary);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Cards / inset / buttons */
+.neumorphic-card{
+  background:var(--base);
+  border-radius:20px;
+  box-shadow:8px 8px 16px var(--darker), -8px -8px 16px var(--lighter);
+}
+.neumorphic-inset{
+  background:var(--base);
+  border-radius:15px;
+  box-shadow:inset 4px 4px 8px var(--darker), inset -4px -4px 8px var(--lighter);
+}
+.neumorphic-button{
+  background:var(--base);
+  border-radius:12px;
+  box-shadow:4px 4px 8px var(--darker), -4px -4px 8px var(--lighter);
+  transition:all .2s ease; border:none;
+}
+.neumorphic-button:hover{
+  box-shadow:2px 2px 4px var(--darker), -2px -2px 4px var(--lighter);
+}
+.neumorphic-button:active{
+  box-shadow:inset 2px 2px 4px var(--darker), inset -2px -2px 4px var(--lighter);
+}
+.neumorphic-nav-active{
+  box-shadow:inset 3px 3px 6px var(--darker), inset -3px -3px 6px var(--lighter);
+  background:var(--base);
+  color:var(--text-primary);
+}
+
+/* Text helpers + status labels */
+.text-primary{color:var(--text-primary)}
+.text-secondary{color:var(--text-secondary)}
+.text-muted{color:var(--text-muted)}
+.status-draft{background:var(--status-draft-bg); color:var(--status-draft-text)}
+.status-sent{background:var(--status-sent-bg); color:var(--status-sent-text)}
+.status-approved{background:var(--status-approved-bg); color:var(--status-approved-text)}
+.status-paid{background:var(--status-paid-bg); color:var(--status-paid-text)}
+.status-overdue,.status-rejected,.status-cancelled,.status-expired{
+  background:var(--status-error-bg); color:var(--status-error-text)
+}

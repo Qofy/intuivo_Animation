@@ -1,0 +1,27 @@
+# Rust
+/target/
+Cargo.lock
+
+# Database
+quoteflow.db/
+quoteflow_test.db
+quoteflow_test_*.db
+*.db
+
+# Logs
+*.log
+
+# IDE
+.idea/
+
+# OS
+.DS_Store
+Thumbs.dbquoteflow-backend
+quoteflow-backend
+quoteflow-backend_noauth
+backend.tar.gz
+quoteflow_fedora_42__64
+backend.tar.gz
+target
+ai_campus_backend
+data
